@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Musical Equations</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito Sans">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code">
+  
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+</head>
+<body class="centered-children">
+  <div class="filter"></div>
+  <div class="container">
+    <div id="tip"></div>
+    <div class="input-container">
+      <button class="button gray" onclick=toggleSettingsModal()><span class="settings-icon">⚙️</span></button>
+      <input class="input" id="equation" type="text" autocomplete="off" spellcheck="false">
+      <button class="button" onclick="checkEquation()">Execute</button>
+    </div>
+    <div class="settings-container" id="settingsModal" style="display: none">
+      <div class="label">Iterations</div>
+      <div class="label">Tempo</div>
+      <div class="label">Variable</div>
+      <div class="label">Octaves</div>
+      <div class="label">Chords</div>
+      <input class="input" id="iterations" type="text" autocomplete="off" spellcheck="false" value=100 placeholder="Iterations">
+      <input class="input" id="tempo" type="text" autocomplete="off" spellcheck="false" value=100 placeholder="Tempo">
+      <input class="input" id="variable" type="text" autocomplete="off" spellcheck="false" value=x placeholder="Variable">
+      <input class="input" id="octaves" type="text" autocomplete="off" spellcheck="false" value=4,5 placeholder="Octaves">
+      <input class="input" id="chords" type="text" autocomplete="off" spellcheck="false" value=1 placeholder="Chords">
+    </div>
+    <div id="loading" style="display: none">Loading...</div>
+    <div class="results-container" id="result" style="display: none"></div>
+    <div class="sequence-container" id="sequence" style="display: none"></div> 
+    <div class="sequence-container" id="frequencies" style="display: none"></div>
+    <button class="button green" id="playButton" onclick="playCurrent()" style="display: none">Play</button>
+    <button class="button pause" id="pauseButton" onclick="stopCurrent()" style="display: none">Stop</button>
+  </div>
+</body>
+</html>
