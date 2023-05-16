@@ -1,0 +1,163 @@
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: "Nunito Sans";
+  background: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+::-webkit-scrollbar-track {background: #f1f1f1;}
+
+::-webkit-scrollbar-thumb {background: #888;}
+
+::-webkit-scrollbar-thumb:hover {background: #555;}
+
+::selection {
+  color: #ffffff;
+  background: #5cabff;
+}
+
+.centered-children {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 0.5em;
+}
+
+.container {
+  width: 30em;
+  z-index: 9999;
+}
+
+.input-container {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr auto;
+  grid-gap: 0.5em;
+}
+
+.results-container, .sequence-container {
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  padding: 0.5em;
+  height: 10em;
+  margin-top: 0.5em;
+  overflow: auto;
+  border-color: #8f8f8f;
+  background: rgba(255, 255, 255, var(--opacity));
+}
+
+.sequence-container {
+  height: auto;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.input, .button {
+  font-size: 1em;
+  font-family: "Fira Code";
+  padding: 0.2em;
+  outline: 0;
+  border-radius: 4px;
+  border-style: solid;
+  transition: all 0.3s ease-in-out;
+}
+
+.input {
+  border-color: #8f8f8f;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, var(--opacity));
+}
+
+.input:focus {
+  border-color: #5cabff;
+}
+
+.button {
+  background: #5cabff;
+  color: #ffffff;
+  cursor: pointer;
+  border-color: #5cabff;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  font-family: "Nunito Sans";
+  user-select: none;
+}
+
+.button:hover:not(.gray):not(.green):not(.pause) {
+  background: #4178b4;
+  border-color: #4178b4;
+}
+
+#loading {
+  font-size: 0.8em;
+  color: #5cabff;
+}
+
+.gray {
+  background: rgba(255, 255, 255, var(--opacity));;
+  border-color: #d1d1d1;
+}
+
+.gray:hover {
+  background: #d1d1d1;
+}
+
+.label {
+  color: #5cabff;
+}
+
+.settings-container div {
+  display: flex;
+  align-items: center;
+}
+
+.green, .pause {
+  margin-right: 0.2em;
+  margin-top: 0.5em;
+}
+
+.green {
+  background: #9dd2a6;
+  border-color: #9dd2a6;
+}
+
+.green:hover {
+  background: #63b671;
+  border-color: #63b671;
+}
+
+.pause {
+  background: #8f8f8f;
+  border-color: #8f8f8f;
+}
+
+.pause:hover {
+  background: #696969;
+  border-color: #696969;
+}
+
+#tip {
+  font-size: 0.8em; 
+  margin-bottom: 0.2em;
+  user-select: none;
+}
+
+.filter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.5);
+}
